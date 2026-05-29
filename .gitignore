@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Project Plans
+PORTFOLIO_PLAN.md
+
+.gitignore
+
