@@ -35,9 +35,9 @@ export default function Contact() {
       <div className="section-container contact__inner">
 
         {/* Left — copy */}
-        <div className="contact__copy">
+        <div className="contact__copy reveal">
           <p className="section-label">Contact</p>
-          <h2>Let's Build Something</h2>
+          <h2 className="heading-chrome">Let's Build Something</h2>
           <p className="contact__blurb">
             Open to full-time roles, freelance contracts, and interesting collabs.
             Send a message or reach out directly via the links below.
@@ -52,7 +52,7 @@ export default function Contact() {
         </div>
 
         {/* Right — form */}
-        <div className="glass-card contact__form-wrap">
+        <div className="glass-card contact__form-wrap reveal">
           {sent ? (
             <div className="contact__success">
               <span className="contact__success-icon">✓</span>

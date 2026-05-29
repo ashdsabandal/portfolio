@@ -16,11 +16,11 @@ export default function Projects({ onOpenProject }) {
     <section id="projects" className="section-wrapper">
       <div className="section-container">
 
-        <p className="section-label">Projects</p>
-        <h2 className="projects__heading">Selected Work</h2>
+        <p className="section-label reveal">Projects</p>
+        <h2 className="projects__heading heading-chrome reveal">Selected Work</h2>
 
         {/* Tag filters */}
-        <div className="projects__filters" role="group" aria-label="Filter projects by category">
+        <div className="projects__filters reveal" role="group" aria-label="Filter projects by category">
           {ALL_TAGS.map(tag => (
             <button
               key={tag}
@@ -33,7 +33,7 @@ export default function Projects({ onOpenProject }) {
         </div>
 
         {/* Cards grid */}
-        <div className="projects__grid">
+        <div className="projects__grid reveal-stagger reveal">
           {filtered.map(project => (
             <article
               key={project.id}

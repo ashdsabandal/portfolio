@@ -6,10 +6,10 @@ export default function Experience() {
     <section id="experience" className="section-wrapper">
       <div className="section-container">
 
-        <p className="section-label">Experience</p>
-        <h2 className="experience__heading">Career Timeline</h2>
+        <p className="section-label reveal">Experience</p>
+        <h2 className="experience__heading heading-chrome reveal">Career Timeline</h2>
 
-        <div className="timeline">
+        <div className="timeline reveal-stagger reveal">
           {experience.map((job, index) => (
             <div key={job.id} className="timeline__item">
               {/* Connector line & dot */}
