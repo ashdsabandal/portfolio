@@ -149,37 +149,3 @@ export const projects = [
     ],
   },
 ]
-
-// ============================================================
-// Terminal CLI — Available Commands
-// ============================================================
-
-export const terminalCommands = {
-  help: () => [
-    '┌─ Available commands ───────────────────────────┐',
-    '│  about     → Bio & background                  │',
-    '│  skills    → Tech stack breakdown              │',
-    '│  projects  → View my projects                  │',
-    '│  contact   → How to reach me                   │',
-    '│  clear     → Clear terminal                    │',
-    '└────────────────────────────────────────────────┘',
-  ],
-  about: () => [
-    `> ${owner.name} — ${owner.title}`,
-    `> ${owner.location}`,
-    `> ${owner.tagline}`,
-  ],
-  skills: () => [
-    '> Tech Stack:',
-    ...skills.map(g => `  [${g.category}] ${g.items.join(' · ')}`),
-  ],
-  projects: () => [
-    '> Projects:',
-    ...projects.map((p, i) => `  ${i + 1}. ${p.title} — ${p.summary}`),
-  ],
-  contact: () => [
-    `> Email:    ${owner.email}`,
-    `> GitHub:   ${owner.github}`,
-    `> LinkedIn: ${owner.linkedin}`,
-  ],
-}

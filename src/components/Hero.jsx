@@ -10,21 +10,14 @@ export default function Hero() {
     <section id="hero" className="hero section-wrapper">
       <div className="section-container hero__inner">
 
-        {/* Eyebrow */}
         <p className="section-label hero__label">
           Available for work · {owner.location}
         </p>
 
-        {/* Headline */}
         <h1 className="hero__title">{owner.name}</h1>
-
-        {/* Sub-title */}
         <p className="hero__role">{owner.title}</p>
-
-        {/* Tagline */}
         <p className="hero__tagline">{owner.tagline}</p>
 
-        {/* CTA row */}
         <div className="hero__actions">
           <button
             className="btn-primary"
@@ -40,20 +33,18 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Social links */}
         <div className="hero__socials">
-          <a href={owner.github}   target="_blank" rel="noreferrer" aria-label="GitHub"   className="hero__social-link"><Globe   size={18} /></a>
-          <a href={owner.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hero__social-link"><Users size={18} /></a>
-          <a href={owner.twitter}  target="_blank" rel="noreferrer" aria-label="Twitter"  className="hero__social-link"><AtSign  size={18} /></a>
+          <a href={owner.github}   target="_blank" rel="noreferrer" aria-label="GitHub"   className="hero__social-link"><Globe  size={18} /></a>
+          <a href={owner.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hero__social-link"><Users  size={18} /></a>
+          <a href={owner.twitter}  target="_blank" rel="noreferrer" aria-label="Twitter"  className="hero__social-link"><AtSign size={18} /></a>
         </div>
 
-        {/* Scroll cue */}
         <button className="hero__scroll-cue" onClick={scrollToAbout} aria-label="Scroll down">
           <ArrowDown size={16} />
         </button>
+
       </div>
 
-      {/* Background glow blob */}
       <div className="hero__glow" aria-hidden="true" />
     </section>
   )

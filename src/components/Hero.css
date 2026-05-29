@@ -5,7 +5,7 @@
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-top: 64px; /* navbar height */
+  padding-top: 64px;
   overflow: hidden;
 }
 
@@ -15,6 +15,8 @@
   align-items: flex-start;
   gap: 1.25rem;
   animation: fadeUp 0.8s ease both;
+  position: relative;
+  z-index: 1;
 }
 
 .hero__label {
@@ -114,11 +116,6 @@
   background: radial-gradient(ellipse, rgba(168, 36, 230, 0.12) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
-}
-
-.hero__inner {
-  position: relative;
-  z-index: 1;
 }
 
 @media (max-width: 600px) {
