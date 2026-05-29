@@ -1,0 +1,98 @@
+/* Experience — Chrome Metal Cybersigilism */
+
+.experience__heading {
+  margin: 0.75rem 0 2.5rem;
+}
+
+/* Timeline layout */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 780px;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 1.5rem;
+  align-items: start;
+}
+
+/* Track: dot + vertical line */
+.timeline__track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.6rem; /* align dot with card header */
+}
+
+.timeline__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: var(--purple-glow-sm);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.timeline__line {
+  width: 1px;
+  flex: 1;
+  min-height: 2.5rem;
+  background: linear-gradient(to bottom, var(--purple), var(--border-metal));
+  margin-top: 6px;
+}
+
+/* Card */
+.timeline__card {
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.timeline__card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline__role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 3px;
+  line-height: 1.3;
+}
+
+.timeline__company {
+  font-size: 0.875rem;
+  color: var(--purple-light);
+  font-family: var(--font-mono);
+  margin: 0;
+}
+
+.timeline__period {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.timeline__desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.timeline__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+@media (max-width: 600px) {
+  .timeline__card-header {
+    flex-direction: column;
+  }
+}

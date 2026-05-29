@@ -1,0 +1,72 @@
+/* Footer — Chrome Metal Cybersigilism */
+
+.footer {
+  position: relative;
+  border-top: 1px solid var(--border-metal);
+  padding: 1.75rem 0 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.75rem;
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer__logo {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.footer__copy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Back to top */
+.footer__top-btn {
+  background: none;
+  border: 1px solid var(--border-metal);
+  border-radius: var(--radius-md);
+  padding: 7px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-base);
+}
+
+.footer__top-btn:hover {
+  border-color: var(--purple);
+  color: var(--purple-light);
+  box-shadow: var(--purple-glow-sm);
+}
+
+/* Chrome accent bar */
+.footer__chrome-line {
+  height: 3px;
+  background: var(--chrome-gradient);
+  opacity: 0.4;
+}
+
+@media (max-width: 500px) {
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
