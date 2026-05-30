@@ -8,20 +8,10 @@ export default function About() {
       <SigilWatermark className="sigil-watermark--about" />
       <div className="section-container about__inner">
 
-        {/* Left — bio */}
-        <div className="about__bio reveal">
-          <p className="section-label">About Me</p>
-          <h2 className="heading-chrome">The Engineer Behind the Build</h2>
-          <div className="about__bio-text">
-            {owner.bio.split('\n').filter(Boolean).map((line, i) => (
-              <p key={i}>{line}</p>
-            ))}
-          </div>
-        </div>
-
-        {/* Right — skills matrix */}
-        <div className="about__skills">
+        <div className="about__skills" style={{ width: '100%' }}>
           <p className="section-label reveal">Tech Stack</p>
+          <h2 className="heading-chrome reveal" style={{ marginBottom: '2.5rem' }}>Technologies & Tools</h2>
+          
           <div className="skills-grid reveal-stagger reveal">
             {skills.map((group) => (
               <div key={group.category} className="glass-card skill-group">

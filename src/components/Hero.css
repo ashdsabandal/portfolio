@@ -42,9 +42,16 @@
   margin: 0;
 }
 
-.hero__tagline {
-  max-width: 52ch;
-  font-size: clamp(1rem, 2vw, 1.15rem);
+.hero__bio {
+  max-width: 58ch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.hero__bio-paragraph {
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem);
   color: var(--text-secondary);
   line-height: 1.65;
   margin: 0;

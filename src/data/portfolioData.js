@@ -4,18 +4,15 @@
 // ============================================================
 
 export const owner = {
-  name: 'Ash Sabandal',
+  name: 'Ashley Mark Sabandal',
   title: 'Full-Stack Developer',
   tagline: 'Building systems that cut through complexity.',
-  location: 'Manila, PH',
-  email: 'ash@example.com',
-  github: 'https://github.com/',
-  linkedin: 'https://linkedin.com/in/',
-  twitter: 'https://twitter.com/',
-  resumeUrl: '/resume.pdf',
-  bio: `I'm a full-stack developer obsessed with precision, performance, and purposeful design.
-I build systems that feel fast, look sharp, and scale without breaking a sweat.
-When I'm not shipping code, I'm reverse-engineering how things work — because understanding the machine is the only way to master it.`,
+  location: 'Las Piñas, PH',
+  email: 'ashdsabandal@gmail.com',
+  github: 'https://github.com/ashdsabandal',
+  linkedin: 'https://www.linkedin.com/in/ashley-mark-sabandal/',
+  bio: `I'm a Computer Science student at the University of the Philippines Los Baños (UPLB) dedicated to building clean, efficient, and impactful software. I love exploring new frameworks and technologies to solve real-world problems through hands-on development.
+From full-stack web applications to mobile tools and multiplayer games, I'm constantly learning and expanding my skill set. My goal is to leverage my academic foundation and project experience to grow as an engineer and launch a full-time career in the tech industry.`,
 }
 
 // ============================================================
@@ -25,23 +22,23 @@ When I'm not shipping code, I'm reverse-engineering how things work — because 
 export const skills = [
   {
     category: 'Languages',
-    items: ['JavaScript', 'TypeScript', 'Python', 'Rust', 'SQL'],
+    items: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C', 'Dart', 'SQL'],
   },
   {
-    category: 'Frontend',
-    items: ['React', 'Next.js', 'Vite', 'CSS / Sass', 'Framer Motion'],
+    category: 'Web Dev',
+    items: ['HTML / CSS', 'React', 'Next.js', 'Node.js', 'Express.js', 'TailwindCSS'],
   },
   {
-    category: 'Backend',
-    items: ['Node.js', 'Express', 'FastAPI', 'PostgreSQL', 'Redis'],
+    category: 'Databases',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Supabase', 'Firebase'],
   },
   {
-    category: 'DevOps & Cloud',
-    items: ['Docker', 'GitHub Actions', 'Vercel', 'AWS (EC2, S3)', 'Linux'],
+    category: 'Mobile & Game',
+    items: ['Flutter', 'Android Studio', 'Godot', 'Unity', 'libGDX'],
   },
   {
-    category: 'Tools',
-    items: ['Git', 'VS Code', 'Figma', 'Postman', 'Turborepo'],
+    category: 'Tools & Tech',
+    items: ['Git', 'GitHub', 'VS Code', 'Figma', 'Postman'],
   },
 ]
 
@@ -52,30 +49,30 @@ export const skills = [
 export const experience = [
   {
     id: 'exp-1',
-    role: 'Senior Full-Stack Engineer',
-    company: 'Apex Systems',
-    period: '2023 – Present',
+    role: 'Backend Developer',
+    company: 'The Haven Company, UPLB',
+    period: 'Jan 2026',
     description:
-      'Led development of a multi-tenant SaaS dashboard serving 50K+ users. Architected a real-time notification system using WebSockets and Redis pub/sub.',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
+      'Engineered high-performance, real-time backend architecture leveraging Next.js API routes and Supabase. Streamlined relational database schemas and optimized data access layers to minimize query latency, improve throughput, and secure tenant authentication.',
+    tags: ['Next.js', 'Supabase', 'Database', 'Backend', 'Real-time'],
   },
   {
     id: 'exp-2',
-    role: 'Frontend Engineer',
-    company: 'Neon Labs',
-    period: '2021 – 2023',
+    role: 'Lead Developer',
+    company: 'UPLB COSS Game Jam Los Baños 2025',
+    period: 'June 2025',
     description:
-      'Rebuilt the core UI with Next.js and TypeScript, reducing Time-to-Interactive by 40%. Designed and shipped a component library used across 3 product teams.',
-    tags: ['Next.js', 'TypeScript', 'Storybook', 'Figma'],
+      'Spearheaded design and codebase development for a competitive game project, securing 4th place out of numerous entries. Architected core gameplay systems, optimized frame rendering/assets for smooth execution under constraints, and integrated immersive mechanics aligned with the theme.',
+    tags: ['Game Development', 'Godot', 'Unity', 'Level Design'],
   },
   {
     id: 'exp-3',
-    role: 'Junior Developer',
-    company: 'CodeCraft Studio',
-    period: '2020 – 2021',
+    role: 'IT Assistant Intern',
+    company: 'University of Perpetual Help System DALTA',
+    period: 'June 2023',
     description:
-      'Built and maintained client web apps across various industries. First exposure to CI/CD pipelines and cloud deployment.',
-    tags: ['React', 'Express', 'MySQL', 'GitHub Actions'],
+      'Facilitated day-to-day IT operations and network infrastructure maintenance. Diagnosed and resolved hardware/software bottlenecks, optimized office technology workflows, and ensured high uptime for system-critical endpoints.',
+    tags: ['IT Support', 'Networking', 'Troubleshooting', 'System Support'],
   },
 ]
 
@@ -86,66 +83,66 @@ export const experience = [
 export const projects = [
   {
     id: 'proj-1',
-    title: 'Phantom Dashboard',
-    summary: 'Multi-tenant analytics platform with real-time data pipelines.',
+    title: 'Akomi',
+    summary: 'Full-stack student housing portal streamlining administrative and occupancy operations.',
     description:
-      'A full-stack SaaS analytics dashboard built for multi-tenant deployments. Features live data streaming via WebSockets, customizable chart widgets, role-based access control, and a Postgres-backed audit log.',
-    tags: ['Fullstack', 'SaaS'],
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Docker', 'WebSockets'],
-    github: 'https://github.com/',
-    live: 'https://example.com',
+      'A modern web application built to automate complex university dormitory workflows. Replaces paper-based processes with an end-to-end digital solution featuring real-time room bookings, utility/appliance registration, automated billing generation, and occupancy tracking.',
+    tags: ['Web App'],
+    tech: ['Next.js', 'React', 'Supabase', 'PostgreSQL', 'TailwindCSS'],
+    github: 'https://github.com/ashdsabandal',
+    live: null,
     highlights: [
-      'Handles 50K+ concurrent users with < 100ms p99 latency',
-      'WebSocket pub/sub notification pipeline via Redis Streams',
-      'Row-level security enforced at the database layer',
+      'Eliminated manual paperwork by introducing automated fee tracking and billing generation',
+      'Designed an intuitive, real-time room selection interface for boarding students',
+      'Built secure administrative tools for centralized registry management and occupancy reporting',
     ],
   },
   {
     id: 'proj-2',
-    title: 'Forge CLI',
-    summary: 'Terminal scaffolding tool for opinionated full-stack project templates.',
+    title: 'Spellcasters!',
+    summary: 'Real-time cooperative multiplayer roguelite word game built with Java and libGDX.',
     description:
-      'A Node.js CLI tool that generates production-ready full-stack project templates with a single command. Supports React, Next.js, and Express starters with pre-configured ESLint, Docker, and CI/CD.',
-    tags: ['CLI', 'DevTools'],
-    tech: ['Node.js', 'TypeScript', 'Commander.js', 'Handlebars'],
-    github: 'https://github.com/',
+      'A unique 4-player cooperative roguelite that fuses tactical word puzzle mechanics with RPG strategy. Powered by a high-performance custom game loop and the KrowNet networking library to synchronize game states fluidly across concurrent players.',
+    tags: ['Game Dev'],
+    tech: ['Java', 'libGDX', 'ECS', 'KrowNet'],
+    github: 'https://github.com/ashdsabandal',
     live: null,
     highlights: [
-      'Generates project scaffolds in < 3 seconds',
-      'Plugin-based architecture for custom template extensions',
-      '800+ installs on NPM in first month',
+      'Designed and implemented the core game loop using the Ashley Entity Component System (ECS)',
+      'Built a low-latency client-server synchronization model utilizing KrowNet for real-time multiplayer',
+      'Engineered modular game mechanics blending vocabulary puzzles with real-time tactical combat',
     ],
   },
   {
     id: 'proj-3',
-    title: 'Pulse API',
-    summary: 'Lightweight REST + GraphQL gateway for microservice orchestration.',
+    title: 'Farm to Table',
+    summary: 'Direct-to-consumer e-commerce marketplace empowering local agricultural producers.',
     description:
-      'A composable API gateway that aggregates multiple microservices behind a single REST and GraphQL interface. Includes request batching, caching middleware, and a rate limiter.',
-    tags: ['Backend', 'System'],
-    tech: ['Fastify', 'GraphQL', 'Redis', 'PostgreSQL', 'Jest'],
-    github: 'https://github.com/',
+      'A full-stack marketplace designed to disintermediate the agricultural supply chain by connecting local farmers directly with end consumers. Features comprehensive inventory management, secure user roles, and order/transaction tracking.',
+    tags: ['Web App'],
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'MERN'],
+    github: 'https://github.com/ashdsabandal',
     live: null,
     highlights: [
-      'Schema-first GraphQL with automatic REST passthrough',
-      'Redis LRU cache cuts upstream requests by 60%',
-      'Full test coverage with Jest & Supertest',
+      'Bypasses middle-tier distributors to increase local farmers\' profit margins',
+      'Implemented dynamic product catalog management with secure user authentication (JWT)',
+      'Designed transactional order workflows with automated receipts and status tracking',
     ],
   },
   {
     id: 'proj-4',
-    title: 'Sigil UI',
-    summary: 'A cyberpunk-inspired React component library with dark-first design.',
+    title: 'LakPlan',
+    summary: 'Cross-platform mobile application for collaborative itinerary and trip planning.',
     description:
-      'A React component library featuring glassmorphic and metallic design tokens, animated interactive elements, and a CLI for dropping components directly into any project.',
-    tags: ['Frontend', 'Library'],
-    tech: ['React', 'TypeScript', 'CSS Modules', 'Storybook', 'Rollup'],
-    github: 'https://github.com/',
-    live: 'https://example.com',
+      'A cross-platform mobile application designed to streamline group travel planning. Leverages real-time data synchronization to allow users to build shared itineraries, set reminders, and view location pins dynamically.',
+    tags: ['Mobile App'],
+    tech: ['Flutter', 'Dart', 'Firebase', 'Google Maps API'],
+    github: 'https://github.com/ashdsabandal',
+    live: null,
     highlights: [
-      '40+ components with full Storybook docs',
-      'Zero-dependency core with tree-shakeable exports',
-      'Fully accessible — WCAG 2.1 AA compliant',
+      'Co-developed a responsive mobile UI using Flutter for seamless iOS & Android support',
+      'Integrated Firebase Firestore for real-time collaboration and itinerary synchronization',
+      'Implemented location-based reminders and mapping features for enhanced trip navigation',
     ],
   },
 ]

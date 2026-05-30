@@ -94,9 +94,9 @@
   font-size: 0.7rem;
   padding: 2px 8px;
   border-radius: var(--radius-sm);
-  background: rgba(148, 163, 184, 0.08);
+  background: rgba(203, 213, 225, 0.06);
   border: 1px solid var(--border-metal);
-  color: var(--text-muted);
+  color: var(--text-chrome);
 }
 
 /* Links */

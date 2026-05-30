@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import './Navbar.css'
 
 const NAV_LINKS = [
-  { id: 'about',      label: 'About' },
+  { id: 'about',      label: 'Tech Stack' },
   { id: 'projects',   label: 'Projects' },
   { id: 'experience', label: 'Experience' },
   { id: 'contact',    label: 'Contact' },
@@ -30,7 +30,7 @@ export default function Navbar({ activeSection }) {
         {/* Logo / wordmark */}
         <button className="navbar__logo" onClick={() => scrollTo('hero')} aria-label="Back to top">
           <span className="navbar__logo-bracket">&lt;</span>
-          <span className="navbar__logo-name chrome-text">AR</span>
+          <span className="navbar__logo-name chrome-text">ash</span>
           <span className="navbar__logo-bracket">/&gt;</span>
         </button>
 
@@ -45,9 +45,6 @@ export default function Navbar({ activeSection }) {
               {label}
             </button>
           ))}
-          <a className="btn-primary navbar__cta" href="/resume.pdf" target="_blank" rel="noreferrer">
-            Résumé
-          </a>
         </nav>
 
         {/* Mobile hamburger */}
@@ -72,9 +69,6 @@ export default function Navbar({ activeSection }) {
               {label}
             </button>
           ))}
-          <a className="btn-primary" href="/resume.pdf" target="_blank" rel="noreferrer">
-            Résumé
-          </a>
         </nav>
       )}
     </header>

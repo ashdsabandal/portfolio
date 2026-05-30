@@ -47,7 +47,6 @@ export default function Contact() {
             <a href={`mailto:${owner.email}`}    className="contact__social-link" aria-label="Email"><Mail     size={18} />{owner.email}</a>
             <a href={owner.github}   target="_blank" rel="noreferrer" className="contact__social-link" aria-label="GitHub"><Globe   size={18} />GitHub</a>
             <a href={owner.linkedin} target="_blank" rel="noreferrer" className="contact__social-link" aria-label="LinkedIn"><Users size={18} />LinkedIn</a>
-            <a href={owner.twitter}  target="_blank" rel="noreferrer" className="contact__social-link" aria-label="Twitter"><AtSign  size={18} />Twitter</a>
           </div>
         </div>
 

@@ -1,27 +1,14 @@
-/* About — Chrome Metal Cybersigilism */
+/* Tech Stack*/
 
 .about__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(3rem, 6vw, 5rem);
-  align-items: start;
-}
-
-.about__bio h2 {
-  margin: 0.75rem 0 1.5rem;
-}
-
-.about__bio-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+  display: block;
 }
 
 /* Skills grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
 }
 
 .skill-group {
@@ -64,15 +51,6 @@
   border-radius: 50%;
   background: var(--purple);
   flex-shrink: 0;
-}
-
-@media (max-width: 900px) {
-  .about__inner {
-    grid-template-columns: 1fr;
-  }
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media (max-width: 500px) {

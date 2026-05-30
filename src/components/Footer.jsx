@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="footer__left">
           <span className="footer__logo">
             <span className="navbar__logo-bracket">&lt;</span>
-            <span className="chrome-text">AR</span>
+            <span className="chrome-text">ash</span>
             <span className="navbar__logo-bracket">/&gt;</span>
           </span>
           <p className="footer__copy">

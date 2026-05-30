@@ -17,7 +17,11 @@ export default function Hero() {
 
         <h1 className="hero__title reveal">{owner.name}</h1>
         <p className="hero__role reveal">{owner.title}</p>
-        <p className="hero__tagline reveal">{owner.tagline}</p>
+        <div className="hero__bio reveal">
+          {owner.bio.split('\n').filter(Boolean).map((line, i) => (
+            <p key={i} className="hero__bio-paragraph">{line}</p>
+          ))}
+        </div>
 
         <div className="hero__actions reveal">
           <button
@@ -37,7 +41,6 @@ export default function Hero() {
         <div className="hero__socials reveal">
           <a href={owner.github}   target="_blank" rel="noreferrer" aria-label="GitHub"   className="hero__social-link"><Globe  size={18} /></a>
           <a href={owner.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hero__social-link"><Users  size={18} /></a>
-          <a href={owner.twitter}  target="_blank" rel="noreferrer" aria-label="Twitter"  className="hero__social-link"><AtSign size={18} /></a>
         </div>
 
         <button className="hero__scroll-cue reveal" onClick={scrollToAbout} aria-label="Scroll down">
