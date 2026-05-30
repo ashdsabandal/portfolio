@@ -28,3 +28,6 @@ PORTFOLIO_PLAN.md
 
 .gitignore
 
+# Env files
+.env
+.env.*

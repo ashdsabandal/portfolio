@@ -2,17 +2,21 @@ import { useState } from 'react'
 import { Send, Globe, Users, AtSign, Mail } from 'lucide-react'
 import { owner } from '../data/portfolioData'
 import './Contact.css'
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 export default function Contact() {
   const [form, setForm]   = useState({ name: '', email: '', message: '' })
   const [errors, setErrors] = useState({})
   const [sent, setSent]   = useState(false)
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const validate = () => {
     const e = {}
     if (!form.name.trim())                      e.name    = 'Name is required.'
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Valid email required.'
     if (form.message.trim().length < 10)        e.message = 'Message must be at least 10 characters.'
+    if (!hCaptchaToken)                         e.submit  = 'Please complete the captcha.'
     return e
   }
 
@@ -20,15 +24,51 @@ export default function Contact() {
     const { name, value } = e.target
     setForm(f => ({ ...f, [name]: value }))
     if (errors[name]) setErrors(prev => { const n = { ...prev }; delete n[name]; return n })
+    if (errors.submit) setErrors(prev => { const n = { ...prev }; delete n.submit; return n })
   }
 
-  const handleSubmit = (e) => {
+  const [hCaptchaToken, setHCaptchaToken] = useState("")
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length) return setErrors(errs)
-    // TODO: wire to email service (e.g. EmailJS / Formspree)
-    setSent(true)
+
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          // Web3Forms Access Key
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          "h-captcha-response": hCaptchaToken,
+        }),
+      })
+      
+      const result = await response.json()
+      if (result.success) {
+        setSent(true)
+      } else {
+        setErrors({ submit: result.message || "Failed to send message. Please try again later." })
+      }
+    } catch (error) {
+      setErrors({ submit: "An error occurred while sending the message." })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
+
+  const onHCaptchaChange = (token) => {
+    setHCaptchaToken(token);
+  };
 
   return (
     <section id="contact" className="section-wrapper">
@@ -103,10 +143,19 @@ export default function Contact() {
                 />
                 {errors.message && <span className="contact__error">{errors.message}</span>}
               </div>
+              
+              <HCaptcha
+                sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                reCaptchaCompat={false}
+                onVerify={onHCaptchaChange} 
+              /> 
 
-              <button type="submit" className="btn-primary contact__submit">
-                <Send size={16} /> Send Message
+              <button type="submit" className="btn-primary contact__submit" disabled={isSubmitting}>
+                <Send size={16} /> {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
+
+              {errors.submit && <div className="contact__error" style={{marginTop: '1rem', textAlign: 'center'}}>{errors.submit}</div>}
+
             </form>
           )}
         </div>
