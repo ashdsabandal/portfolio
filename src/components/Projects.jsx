@@ -1,9 +1,48 @@
 import { useState } from 'react'
-import { ExternalLink, Code2 } from 'lucide-react'
+import { ExternalLink, Code2, Image } from 'lucide-react'
 import { projects } from '../data/portfolioData'
 import './Projects.css'
 
 const ALL_TAGS = ['All', ...Array.from(new Set(projects.flatMap(p => p.tags)))]
+
+/** Returns initials for the placeholder (up to 2 chars) */
+function getInitials(title) {
+  return title
+    .split(/\s+/)
+    .slice(0, 2)
+    .map(w => w[0])
+    .join('')
+    .toUpperCase()
+}
+
+/** Thumbnail strip — image if available, else styled placeholder */
+function CardThumbnail({ project }) {
+  const hasShots = project.screenshots && project.screenshots.length > 0
+
+  if (hasShots) {
+    return (
+      <div className="project-card__thumb">
+        <img
+          src={project.screenshots[0]}
+          alt={`${project.title} screenshot`}
+          className="project-card__thumb-img"
+          draggable={false}
+        />
+        <div className="project-card__thumb-overlay" />
+        <span className="project-card__photo-badge">
+          <Image size={11} />
+          {project.screenshots.length}
+        </span>
+      </div>
+    )
+  }
+
+  return (
+    <div className="project-card__thumb project-card__thumb--placeholder">
+      <span className="project-card__thumb-initials">{getInitials(project.title)}</span>
+    </div>
+  )
+}
 
 export default function Projects({ onOpenProject }) {
   const [activeTag, setActiveTag] = useState('All')
@@ -44,37 +83,45 @@ export default function Projects({ onOpenProject }) {
               onKeyDown={e => e.key === 'Enter' && onOpenProject(project)}
               aria-label={`View details for ${project.title}`}
             >
-              {/* Tags */}
-              <div className="project-card__tags">
-                {project.tags.map(t => (
-                  <span key={t} className="tag">{t}</span>
-                ))}
-              </div>
+              {/* Thumbnail / placeholder */}
+              <CardThumbnail project={project} />
 
-              {/* Title + summary */}
-              <h3 className="project-card__title">{project.title}</h3>
-              <p className="project-card__summary">{project.summary}</p>
+              {/* Card body */}
+              <div className="project-card__body">
+                {/* Tags */}
+                <div className="project-card__tags">
+                  {project.tags.map(t => (
+                    <span key={t} className="tag">{t}</span>
+                  ))}
+                </div>
 
-              {/* Tech pills */}
-              <div className="project-card__tech">
-                {project.tech.slice(0, 4).map(t => (
-                  <span key={t} className="project-card__tech-pill">{t}</span>
-                ))}
-                {project.tech.length > 4 && (
-                  <span className="project-card__tech-pill">+{project.tech.length - 4}</span>
-                )}
-              </div>
+                {/* Title + summary */}
+                <h3 className="project-card__title">{project.title}</h3>
+                <p className="project-card__summary">{project.summary}</p>
 
-              {/* Link row */}
-              <div className="project-card__links" onClick={e => e.stopPropagation()}>
-                <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub">
-                  <Code2 size={16} /> Code
-                </a>
-                {project.live && (
-                  <a href={project.live} target="_blank" rel="noreferrer" aria-label="Live demo">
-                    <ExternalLink size={16} /> Live
-                  </a>
-                )}
+                {/* Tech pills */}
+                <div className="project-card__tech">
+                  {project.tech.slice(0, 4).map(t => (
+                    <span key={t} className="project-card__tech-pill">{t}</span>
+                  ))}
+                  {project.tech.length > 4 && (
+                    <span className="project-card__tech-pill">+{project.tech.length - 4}</span>
+                  )}
+                </div>
+
+                {/* Link row */}
+                <div className="project-card__links" onClick={e => e.stopPropagation()}>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+                      <Code2 size={16} /> Code
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer" aria-label="Live demo">
+                      <ExternalLink size={16} /> Live
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           ))}

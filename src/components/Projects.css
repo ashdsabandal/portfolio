@@ -17,7 +17,7 @@
   border: 1px solid var(--border-metal);
   border-radius: var(--radius-md);
   padding: 6px 16px;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -46,18 +46,121 @@
   gap: 1.25rem;
 }
 
-/* Project card */
+/* ──────────────────────────────────────────────────
+   Project card
+   ────────────────────────────────────────────────── */
 .project-card {
-  padding: 1.75rem;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  padding: 0;                         /* thumbnail goes edge-to-edge */
+  gap: 0;
   transition: transform var(--transition-fast), border-color var(--transition-base), box-shadow var(--transition-base);
+  overflow: hidden;
 }
 
 .project-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+}
+
+/* ──────────────────────────────────────────────────
+   Thumbnail strip
+   ────────────────────────────────────────────────── */
+.project-card__thumb {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Real screenshot */
+.project-card__thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card__thumb-img {
+  transform: scale(1.05);
+}
+
+/* Fade gradient at the bottom of the image into the card */
+.project-card__thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(8, 9, 12, 0.55) 75%,
+    rgba(8, 9, 12, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+/* Photo count badge */
+.project-card__photo-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(8, 9, 12, 0.72);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border-metal);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-chrome);
+  letter-spacing: 0.04em;
+}
+
+/* Styled placeholder */
+.project-card__thumb--placeholder {
+  background:
+    linear-gradient(135deg,
+      rgba(168, 36, 230, 0.12) 0%,
+      rgba(18, 20, 26, 0.95) 50%,
+      rgba(30, 32, 42, 0.9) 100%
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-metal);
+}
+
+.project-card__thumb-initials {
+  font-family: var(--font-sans);
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: var(--chrome-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.35;
+  user-select: none;
+  transition: opacity var(--transition-base);
+}
+
+.project-card:hover .project-card__thumb-initials {
+  opacity: 0.55;
+}
+
+/* ──────────────────────────────────────────────────
+   Card body (text content below thumb)
+   ────────────────────────────────────────────────── */
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.5rem 1.75rem 1.75rem;
+  flex: 1;
 }
 
 .project-card__tags {
@@ -67,7 +170,8 @@
 }
 
 .project-card__title {
-  font-size: 1.15rem;
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-primary);
   margin: 0;
@@ -90,7 +194,7 @@
 }
 
 .project-card__tech-pill {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.7rem;
   padding: 2px 8px;
   border-radius: var(--radius-sm);

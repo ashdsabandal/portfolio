@@ -61,15 +61,18 @@ export default function ProjectModal({ project, onClose }) {
 
         {/* Action links */}
         <div className="modal-panel__actions">
-          <a href={project.github} target="_blank" rel="noreferrer" className="btn-secondary">
-            <Code2 size={16} /> View Code
-          </a>
+          {project.github && (
+            <a href={project.github} target="_blank" rel="noreferrer" className="btn-secondary">
+              <Code2 size={16} /> View Code
+            </a>
+          )}
           {project.live && (
             <a href={project.live} target="_blank" rel="noreferrer" className="btn-primary">
               <ExternalLink size={16} /> Live Demo
             </a>
           )}
         </div>
+
       </div>
     </div>
   )

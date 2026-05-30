@@ -3,6 +3,14 @@
    Prowler Purple × Void Obsidian × Liquid Silver
    ============================================================ */
 
+@font-face {
+  font-family: 'Horst Blackletter Demo';
+  src: url('./assets/Horst Blackletter Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* --- Backgrounds --- */
   --bg-deep:         #08090c;
@@ -21,7 +29,7 @@
   --text-muted:      #475569;
   --text-chrome:     #cbd5e1;
 
-  /* --- Prowler Purple Accents --- */
+  /* --- Purple Accents --- */
   --purple:          #a824e6;
   --purple-light:    #c458f5;
   --purple-dim:      rgba(168, 36, 230, 0.15);
@@ -56,8 +64,9 @@
   --shadow-purple:   0 4px 30px rgba(168, 36, 230, 0.25);
 
   /* --- Typography Scales --- */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  --font-sans: 'Grenze', serif;
+  --font-display: 'Horst Blackletter Demo', 'Grenze', serif;
+  --font-mono: 'Grenze', serif;
 
   /* --- Spacing & Radius --- */
   --radius-sm:       4px;
@@ -113,10 +122,10 @@ body {
    ============================================================ */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: normal;
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   color: var(--text-primary);
 }
 
@@ -224,7 +233,7 @@ code, kbd, pre {
   align-items: center;
   gap: 6px;
   padding: 3px 10px;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;

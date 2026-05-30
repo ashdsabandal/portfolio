@@ -6,6 +6,7 @@ import Hero           from './components/Hero'
 import About          from './components/About'
 import Projects       from './components/Projects'
 import ProjectModal   from './components/ProjectModal'
+import ProjectDetail  from './components/ProjectDetail'
 import Experience     from './components/Experience'
 import Contact        from './components/Contact'
 import Footer         from './components/Footer'
@@ -41,6 +42,11 @@ function App() {
   // Phase 5 — scroll reveal for all .reveal elements
   useScrollReveal()
 
+  // Determine which overlay to use:
+  // - Has screenshots → full-screen ProjectDetail
+  // - No screenshots  → compact ProjectModal
+  const hasScreenshots = activeProject?.screenshots?.length > 0
+
   return (
     <div className="app">
       <Navbar activeSection={activeSection} />
@@ -67,7 +73,11 @@ function App() {
 
       <Footer />
 
-      {activeProject && (
+      {activeProject && hasScreenshots && (
+        <ProjectDetail project={activeProject} onClose={closeProject} />
+      )}
+
+      {activeProject && !hasScreenshots && (
         <ProjectModal project={activeProject} onClose={closeProject} />
       )}
     </div>

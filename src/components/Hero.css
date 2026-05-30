@@ -37,7 +37,7 @@
 .hero__role {
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 500;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   color: var(--purple-light);
   margin: 0;
 }

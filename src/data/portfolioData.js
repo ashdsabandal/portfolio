@@ -89,8 +89,14 @@ export const projects = [
       'A modern web application built to automate complex university dormitory workflows. Replaces paper-based processes with an end-to-end digital solution featuring real-time room bookings, utility/appliance registration, automated billing generation, and occupancy tracking.',
     tags: ['Web App'],
     tech: ['Next.js', 'React', 'Supabase', 'PostgreSQL', 'TailwindCSS'],
-    github: 'https://github.com/ashdsabandal',
-    live: null,
+    github: 'https://github.com/jcmagpantay/akomi',
+    live: 'https://akomi-uplb.vercel.app/',
+    // Drop images into public/screenshots/proj-1/ and list them here
+    screenshots: [
+      // '/screenshots/proj-1/thumb.png',
+      // '/screenshots/proj-1/rooms.png',
+      // '/screenshots/proj-1/billing.png',
+    ],
     highlights: [
       'Eliminated manual paperwork by introducing automated fee tracking and billing generation',
       'Designed an intuitive, real-time room selection interface for boarding students',
@@ -105,8 +111,12 @@ export const projects = [
       'A unique 4-player cooperative roguelite that fuses tactical word puzzle mechanics with RPG strategy. Powered by a high-performance custom game loop and the KrowNet networking library to synchronize game states fluidly across concurrent players.',
     tags: ['Game Dev'],
     tech: ['Java', 'libGDX', 'ECS', 'KrowNet'],
-    github: 'https://github.com/ashdsabandal',
+    github: 'https://github.com/ashdsabandal/spellcasters',
     live: null,
+    // Drop images into public/screenshots/proj-2/ and list them here
+    screenshots: [
+      // '/screenshots/proj-2/gameplay.png',
+    ],
     highlights: [
       'Designed and implemented the core game loop using the Ashley Entity Component System (ECS)',
       'Built a low-latency client-server synchronization model utilizing KrowNet for real-time multiplayer',
@@ -121,8 +131,12 @@ export const projects = [
       'A full-stack marketplace designed to disintermediate the agricultural supply chain by connecting local farmers directly with end consumers. Features comprehensive inventory management, secure user roles, and order/transaction tracking.',
     tags: ['Web App'],
     tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'MERN'],
-    github: 'https://github.com/ashdsabandal',
+    github: null,
     live: null,
+    // Drop images into public/screenshots/proj-3/ and list them here
+    screenshots: [
+      // '/screenshots/proj-3/home.png',
+    ],
     highlights: [
       'Bypasses middle-tier distributors to increase local farmers\' profit margins',
       'Implemented dynamic product catalog management with secure user authentication (JWT)',
@@ -137,8 +151,12 @@ export const projects = [
       'A cross-platform mobile application designed to streamline group travel planning. Leverages real-time data synchronization to allow users to build shared itineraries, set reminders, and view location pins dynamically.',
     tags: ['Mobile App'],
     tech: ['Flutter', 'Dart', 'Firebase', 'Google Maps API'],
-    github: 'https://github.com/ashdsabandal',
+    github: null,
     live: null,
+    // Drop images into public/screenshots/proj-4/ and list them here
+    screenshots: [
+      // '/screenshots/proj-4/home.png',
+    ],
     highlights: [
       'Co-developed a responsive mobile UI using Flutter for seamless iOS & Android support',
       'Integrated Firebase Firestore for real-time collaboration and itinerary synchronization',
