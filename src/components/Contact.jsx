@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { Send, Globe, Users, AtSign, Mail } from 'lucide-react'
+import { Send, Mail } from 'lucide-react'
 import { owner } from '../data/portfolioData'
 import './Contact.css'
 import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
   const [form, setForm]   = useState({ name: '', email: '', message: '' })
@@ -85,8 +86,8 @@ export default function Contact() {
 
           <div className="contact__socials">
             <a href={`mailto:${owner.email}`}    className="contact__social-link" aria-label="Email"><Mail     size={18} />{owner.email}</a>
-            <a href={owner.github}   target="_blank" rel="noreferrer" className="contact__social-link" aria-label="GitHub"><Globe   size={18} />GitHub</a>
-            <a href={owner.linkedin} target="_blank" rel="noreferrer" className="contact__social-link" aria-label="LinkedIn"><Users size={18} />LinkedIn</a>
+            <a href={owner.github}   target="_blank" rel="noreferrer" className="contact__social-link" aria-label="GitHub"><FaGithub   size={18} />GitHub</a>
+            <a href={owner.linkedin} target="_blank" rel="noreferrer" className="contact__social-link" aria-label="LinkedIn"><FaLinkedin size={18} />LinkedIn</a>
           </div>
         </div>
 

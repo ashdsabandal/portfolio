@@ -56,7 +56,7 @@ export default function Projects({ onOpenProject }) {
       <div className="section-container">
 
         <p className="section-label reveal">Projects</p>
-        <h2 className="projects__heading heading-chrome reveal">Selected Work</h2>
+        <h2 className="projects__heading heading-chrome reveal">Work Showcase</h2>
 
         {/* Tag filters */}
         <div className="projects__filters reveal" role="group" aria-label="Filter projects by category">

@@ -1,7 +1,8 @@
-import { Globe, Users, AtSign, ArrowDown } from 'lucide-react'
+import { ArrowDown } from 'lucide-react'
 import { owner } from '../data/portfolioData'
 import SigilWatermark from './SigilWatermark'
 import './Hero.css'
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Hero() {
   const scrollToAbout = () =>
@@ -39,8 +40,8 @@ export default function Hero() {
         </div>
 
         <div className="hero__socials reveal">
-          <a href={owner.github}   target="_blank" rel="noreferrer" aria-label="GitHub"   className="hero__social-link"><Globe  size={18} /></a>
-          <a href={owner.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hero__social-link"><Users  size={18} /></a>
+          <a href={owner.github}   target="_blank" rel="noreferrer" aria-label="GitHub"   className="hero__social-link"><FaGithub  size={18} /></a>
+          <a href={owner.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hero__social-link"><FaLinkedin  size={18} /></a>
         </div>
 
         <button className="hero__scroll-cue reveal" onClick={scrollToAbout} aria-label="Scroll down">
