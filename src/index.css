@@ -429,6 +429,12 @@ code, kbd, pre {
 .reveal-stagger.reveal--visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.35s; }
 .reveal-stagger.reveal--visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.45s; }
 .reveal-stagger.reveal--visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.55s; }
+.reveal-stagger.reveal--visible > *:nth-child(7) { opacity: 1; transform: none; transition-delay: 0.65s; }
+.reveal-stagger.reveal--visible > *:nth-child(8) { opacity: 1; transform: none; transition-delay: 0.75s; }
+.reveal-stagger.reveal--visible > *:nth-child(9) { opacity: 1; transform: none; transition-delay: 0.85s; }
+.reveal-stagger.reveal--visible > *:nth-child(10) { opacity: 1; transform: none; transition-delay: 0.95s; }
+.reveal-stagger.reveal--visible > *:nth-child(11) { opacity: 1; transform: none; transition-delay: 1.05s; }
+.reveal-stagger.reveal--visible > *:nth-child(12) { opacity: 1; transform: none; transition-delay: 1.15s; }
 
 /* ============================================================
    Phase 5 — Chrome Sheen on glass-card hover

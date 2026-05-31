@@ -62,7 +62,7 @@ export const experience = [
     company: 'UPLB COSS Game Jam Los Baños 2025',
     period: 'June 2025',
     description:
-      'Spearheaded design and codebase development for a competitive game project, securing 4th place out of numerous entries. Architected core gameplay systems, optimized frame rendering/assets for smooth execution under constraints, and integrated immersive mechanics aligned with the theme.',
+      'Spearheaded design and codebase development for a competitive game project, securing 4th place overall, 2nd in Fun Factor, and 3rd in Innovation and Creativity out of numerous entries. Architected core gameplay systems, optimized frame rendering/assets for smooth execution under constraints, and integrated immersive mechanics aligned with the theme.',
     tags: ['Game Development', 'Godot', 'Unity', 'Level Design'],
   },
   {
@@ -115,7 +115,15 @@ export const projects = [
     live: null,
     // Drop images into public/screenshots/proj-2/ and list them here
     screenshots: [
-      // '/screenshots/proj-2/gameplay.png',
+      '/screenshots/proj-2/1.png',
+      '/screenshots/proj-2/2.png',
+      '/screenshots/proj-2/3.png',
+      '/screenshots/proj-2/4.png',
+      '/screenshots/proj-2/5.png',
+      '/screenshots/proj-2/6.png',
+      '/screenshots/proj-2/7.png',
+      '/screenshots/proj-2/8.png',
+      '/screenshots/proj-2/9.png',
     ],
     highlights: [
       'Designed and implemented the core game loop using the Ashley Entity Component System (ECS)',
@@ -155,12 +163,87 @@ export const projects = [
     live: null,
     // Drop images into public/screenshots/proj-4/ and list them here
     screenshots: [
-      // '/screenshots/proj-4/home.png',
+      '/screenshots/proj-4/1.jpg',
+      '/screenshots/proj-4/2.jpg',
+      '/screenshots/proj-4/3.jpg',
+      '/screenshots/proj-4/4.jpg',
+      '/screenshots/proj-4/5.jpg',
+      '/screenshots/proj-4/6.jpg',
+      '/screenshots/proj-4/7.jpg',
     ],
     highlights: [
       'Co-developed a responsive mobile UI using Flutter for seamless iOS & Android support',
       'Integrated Firebase Firestore for real-time collaboration and itinerary synchronization',
       'Implemented location-based reminders and mapping features for enhanced trip navigation',
+    ],
+  },
+  {
+    id: 'proj-5',
+    title: 'Tansan',
+    summary: 'Surreal physics-based sipa game where you play as a sentient leg kicking a bottle cap.',
+    description:
+      'A physics-based sipa game developed in 72 hours for the UPLB COSS Game Jam Los Baños 2025, where it secured 4th place overall (2nd in Fun Factor, 3rd in Innovation & Creativity). Players awaken as a sentient leg and must harness the power of "SIPA" to kick a bottle cap (tansan), earn coins, and avoid obstacles while navigating a surreal environment.',
+    tags: ['Game Dev'],
+    tech: ['Godot', 'GDScript'],
+    github: null,
+    live: 'https://ashkbd.itch.io/tansan',
+    screenshots: [
+      'https://img.itch.zone/aW1hZ2UvMzYyNjk5MC8yMTU5NDM3My5wbmc=/original/p5tnYG.png',
+      'https://img.itch.zone/aW1hZ2UvMzYyNjk5MC8yMTU5NDM3Mi5wbmc=/original/6pVbGx.png',
+      'https://img.itch.zone/aW1hZ2UvMzYyNjk5MC8yMTU5NDM3NC5wbmc=/original/ORnL5k.png',
+      'https://img.itch.zone/aW1hZ2UvMzYyNjk5MC8yMTU5NDM3NS5wbmc=/original/C6%2FZ0z.png',
+    ],
+    highlights: [
+      'Awarded 4th place overall, 2nd in Fun Factor, and 3rd in Innovation & Creativity at the UPLB COSS Game Jam Los Baños 2025',
+      'Engineered interactive physics-based mechanics in Godot, implementing heavy (left-click) and light (right-click) sipa kicks',
+      'Designed procedural obstacles, coin pickup mechanics, and level-boundary collision routines',
+    ],
+  },
+  {
+    id: 'proj-6',
+    title: 'Resonance',
+    summary: 'A puzzle adventure across the stars, helping a lonely 52Hz space whale make friends.',
+    description:
+      'A cosmic puzzle game developed for Jame Gam #50. Players assist Boo, a rare space whale emitting a unique 52Hz frequency, by repairing ancient circuits, decoding signals, and solving spatial puzzles to help Boo find companionship in the vast void of space.',
+    tags: ['Game Dev'],
+    tech: ['Godot', 'GDScript'],
+    github: null,
+    live: 'https://rednuerocs.itch.io/resonance',
+    screenshots: [
+      "https://img.itch.zone/aW1nLzIxODA1MTU4LnBuZw==/original/HlS4TP.png",
+      'https://img.itch.zone/aW1hZ2UvMzY2Mzg2OS8yMTgwNTg4MS5naWY=/original/tRGOWF.gif',
+      'https://img.itch.zone/aW1hZ2UvMzY2Mzg2OS8yMTgwNjIzNS5naWY=/original/pq5SRQ.gif',
+      'https://img.itch.zone/aW1hZ2UvMzY2Mzg2OS8yMTgwNTgyNi5naWY=/original/FfICT3.gif',
+      'https://img.itch.zone/aW1hZ2UvMzY2Mzg2OS8yMTgwNTk4MC5naWY=/original/Nicyho.gif',
+    ],
+    highlights: [
+      'Developed as a submission for Jame Gam #50, featuring thematic puzzles and a narrative-driven cosmic atmosphere',
+      'Implemented circuit-repair mechanics and signal-decoding mini-games in Godot',
+      'Designed spatial puzzle layouts combined with hand-crafted space-themed art and audio design',
+    ],
+  },
+  {
+    id: 'proj-7',
+    title: 'ELEF',
+    summary: 'Gamified mobile platform prototype streamlining recreational sports event coordination.',
+    description:
+      'A high-fidelity mobile application prototype designed to reduce the logistical friction of organizing informal sports games among university students. Developed through a rigorous Human-Computer Interaction (HCI) and design thinking process, ELEF centralizes event creation, real-time roster management, and group communication into a purpose-built, sports-native interface.',
+    tags: ['UI/UX Design'],
+    tech: ['Figma', 'Maze'],
+    github: null,
+    live: 'https://www.figma.com/proto/ad8GCSyBgeRpuwh0yL38ak/CMSC-173-GH2L?node-id=690-464&t=x94PMMTXL2qJ2I2l-1&scaling=min-zoom&content-scaling=fixed&page-id=690%3A278&starting-point-node-id=690%3A1272',
+    // Drop images into public/screenshots/proj-7/ and list them here
+    screenshots: [
+      '/screenshots/proj-7/1.png',
+      '/screenshots/proj-7/2.jpg',
+      '/screenshots/proj-7/3.jpg',
+      '/screenshots/proj-7/4.jpg',
+      '/screenshots/proj-7/5.jpg',
+    ],
+    highlights: [
+      'Conducted contextual inquiries and semi-structured interviews to build affinity diagrams and user personas defining core pain points',
+      'Designed low-fidelity wireframes and transitioned to high-fidelity interactive prototypes in Figma, focusing on smart discovery feeds and advance scheduling features',
+      'Facilitated a within-subjects usability study using Maze, proving the sports-specific interface produced substantially lower misclick rates compared to a generic social media layout',
     ],
   },
 ]
