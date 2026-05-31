@@ -1,6 +1,54 @@
 import { owner, skills } from '../data/portfolioData'
 import SigilWatermark from './SigilWatermark'
+import {
+  SiJavascript, SiTypescript, SiPython, SiC, SiDart,
+  SiReact, SiNextdotjs, SiNodedotjs, SiExpress, SiTailwindcss,
+  SiPostgresql, SiMysql, SiMongodb, SiSupabase, SiFirebase,
+  SiFlutter, SiAndroidstudio, SiGodotengine, SiUnity,
+  SiGit, SiGithub, SiFigma, SiPostman, SiHtml5
+} from 'react-icons/si'
+import { FaJava, FaDatabase, FaGamepad } from 'react-icons/fa6'
+import { VscVscode } from 'react-icons/vsc'
 import './About.css'
+
+const iconMap = {
+  'JavaScript': SiJavascript,
+  'TypeScript': SiTypescript,
+  'Python': SiPython,
+  'Java': FaJava,
+  'C': SiC,
+  'Dart': SiDart,
+  'SQL': FaDatabase,
+  'HTML / CSS': SiHtml5,
+  'React': SiReact,
+  'Next.js': SiNextdotjs,
+  'Node.js': SiNodedotjs,
+  'Express.js': SiExpress,
+  'TailwindCSS': SiTailwindcss,
+  'PostgreSQL': SiPostgresql,
+  'MySQL': SiMysql,
+  'MongoDB': SiMongodb,
+  'Supabase': SiSupabase,
+  'Firebase': SiFirebase,
+  'Flutter': SiFlutter,
+  'Android Studio': SiAndroidstudio,
+  'Godot': SiGodotengine,
+  'Unity': SiUnity,
+  'libGDX': FaGamepad,
+  'Git': SiGit,
+  'GitHub': SiGithub,
+  'VS Code': VscVscode,
+  'Figma': SiFigma,
+  'Postman': SiPostman
+}
+
+function SkillIcon({ name }) {
+  const Icon = iconMap[name];
+  if (Icon) {
+    return <Icon className="skill-group__icon" />
+  }
+  return <span className="skill-group__dot" aria-hidden="true" />
+}
 
 export default function About() {
   return (
@@ -19,7 +67,7 @@ export default function About() {
                 <ul className="skill-group__list">
                   {group.items.map((item) => (
                     <li key={item} className="skill-group__item">
-                      <span className="skill-group__dot" aria-hidden="true" />
+                      <SkillIcon name={item} />
                       {item}
                     </li>
                   ))}
