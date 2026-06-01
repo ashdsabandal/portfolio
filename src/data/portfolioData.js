@@ -246,4 +246,29 @@ export const projects = [
       'Facilitated a within-subjects usability study using Maze, proving the sports-specific interface produced substantially lower misclick rates compared to a generic social media layout',
     ],
   },
+  {
+    id: 'proj-8',
+    title: 'City Pollution Reduction Planner',
+    summary: 'Interactive R Shiny dashboard for optimizing urban pollution reduction strategies.',
+    description:
+      'An interactive data application that helps environmental commissions find the minimum-cost solution to meet pollution reduction targets. It uses linear programming optimization (Simplex Method with Two-Phase approach) to evaluate the combined impact of 30 mitigation projects across 10 priority pollutants.',
+    tags: ['Data Analytics'],
+    tech: ['R', 'Shiny', 'bslib', 'DT'],
+    github: 'https://github.com/ashdsabandal/pollution-reduction-planner',
+    live: null,
+    screenshots: [
+      '/screenshots/proj-8/1.png',
+      '/screenshots/proj-8/2.png',
+      '/screenshots/proj-8/3.png',
+      '/screenshots/proj-8/4.png',
+      '/screenshots/proj-8/5.png',
+      '/screenshots/proj-8/6.png',
+      '/screenshots/proj-8/7.png',
+    ],
+    highlights: [
+      'Implemented linear programming optimization (Two-Phase Simplex Method) to calculate minimum-cost solutions for environmental mandates',
+      'Built an interactive dashboard allowing users to select and evaluate 30 mitigation projects against 10 priority pollutants',
+      'Developed dynamic step-by-step visualizations of the Simplex algorithm calculations using iteration tableaus',
+    ],
+  },
 ]
