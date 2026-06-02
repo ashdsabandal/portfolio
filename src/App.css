@@ -9,3 +9,7 @@
 main {
   flex: 1;
 }
+
+.sigil-glow {
+  filter: drop-shadow(0 0 4px rgba(196, 88, 245, 0.5)) drop-shadow(0 0 10px rgba(168, 36, 230, 0.3)) drop-shadow(0 0 15px rgba(168, 36, 230, 0.15));
+}

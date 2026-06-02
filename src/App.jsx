@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react'
 import './App.css'
-
+import Sigil1Svg from './assets/sigil1.svg'
+import SigilDivider from './components/SigilDivider'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TechStack from './components/TechStack'
@@ -53,7 +54,11 @@ function App() {
       <main>
         <Hero />
 
+        <SigilDivider svg={Sigil1Svg} left="-22%" alt="Sigil Divider 1" maxWidth="480px" top="50px" />
+
         <TechStack />
+
+        <SigilDivider svg={Sigil1Svg} right="-22%" alt="Sigil Divider 2" maxWidth="480px" top="220px" />
 
         <Projects onOpenProject={openProject} />
 
