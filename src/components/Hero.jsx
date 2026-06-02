@@ -1,6 +1,5 @@
 import { ArrowDown } from 'lucide-react'
 import { owner } from '../data/portfolioData'
-import SigilWatermark from './SigilWatermark'
 import './Hero.css'
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -51,7 +50,6 @@ export default function Hero() {
       </div>
 
       {/* Decorative elements */}
-      <SigilWatermark className="sigil-watermark--hero" />
       <div className="hero__glow" aria-hidden="true" />
     </section>
   )

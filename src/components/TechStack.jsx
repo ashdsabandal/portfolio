@@ -1,5 +1,4 @@
 import { owner, skills } from '../data/portfolioData'
-import SigilWatermark from './SigilWatermark'
 import {
   SiJavascript, SiTypescript, SiPython, SiC, SiDart,
   SiReact, SiNextdotjs, SiNodedotjs, SiExpress, SiTailwindcss,
@@ -53,7 +52,6 @@ function SkillIcon({ name }) {
 export default function TechStack() {
   return (
     <section id="tech-stack" className="section-wrapper" style={{ position: 'relative', overflow: 'hidden' }}>
-      <SigilWatermark className="sigil-watermark--tech-stack" />
       <div className="section-container tech-stack__inner">
 
         <div className="tech-stack__skills" style={{ width: '100%' }}>

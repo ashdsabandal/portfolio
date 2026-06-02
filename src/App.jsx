@@ -10,7 +10,6 @@ import ProjectDetail from './components/ProjectDetail'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import SigilDivider from './components/SigilDivider'
 import { useScrollReveal } from './hooks/useScrollReveal'
 
 const SECTIONS = ['hero', 'tech-stack', 'projects', 'experience', 'contact']
@@ -54,19 +53,11 @@ function App() {
       <main>
         <Hero />
 
-        <SigilDivider />
-
         <TechStack />
-
-        <SigilDivider flip />
 
         <Projects onOpenProject={openProject} />
 
-        <SigilDivider />
-
         <Experience />
-
-        <SigilDivider flip />
 
         <Contact />
       </main>
