@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { ExternalLink, Code2, Image } from 'lucide-react'
+import { ExternalLink, Code2, Image, Video } from 'lucide-react'
 import { projects } from '../data/portfolioData'
 import './Projects.css'
 
 const ALL_TAGS = ['All', ...Array.from(new Set(projects.flatMap(p => p.tags)))]
+
+const isVideo = (path) => path && /\.(mp4|webm|ogg|mov|avi)(\?.*)?$/i.test(path);
 
 /** Returns initials for the placeholder (up to 2 chars) */
 function getInitials(title) {
@@ -15,22 +17,37 @@ function getInitials(title) {
     .toUpperCase()
 }
 
-/** Thumbnail strip — image if available, else styled placeholder */
+/** Thumbnail strip — image/video if available, else styled placeholder */
 function CardThumbnail({ project }) {
   const hasShots = project.screenshots && project.screenshots.length > 0
 
   if (hasShots) {
+    const firstShot = project.screenshots[0]
+    const isVid = isVideo(firstShot)
+
     return (
       <div className="project-card__thumb">
-        <img
-          src={project.screenshots[0]}
-          alt={`${project.title} screenshot`}
-          className="project-card__thumb-img"
-          draggable={false}
-        />
+        {isVid ? (
+          <video
+            src={firstShot}
+            className="project-card__thumb-img"
+            autoPlay
+            loop
+            muted
+            playsInline
+            draggable={false}
+          />
+        ) : (
+          <img
+            src={firstShot}
+            alt={`${project.title} screenshot`}
+            className="project-card__thumb-img"
+            draggable={false}
+          />
+        )}
         <div className="project-card__thumb-overlay" />
         <span className="project-card__photo-badge">
-          <Image size={11} />
+          {isVid ? <Video size={11} /> : <Image size={11} />}
           {project.screenshots.length}
         </span>
       </div>

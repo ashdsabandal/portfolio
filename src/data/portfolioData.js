@@ -143,7 +143,9 @@ export const projects = [
     live: null,
     // Drop images into public/screenshots/proj-3/ and list them here
     screenshots: [
-      // '/screenshots/proj-3/home.png',
+      '/screenshots/proj-3/1.png',
+      '/screenshots/proj-3/2.mp4',
+      '/screenshots/proj-3/3.mov',
     ],
     highlights: [
       'Bypasses middle-tier distributors to increase local farmers\' profit margins',

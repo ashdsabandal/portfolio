@@ -6,8 +6,39 @@ import {
 } from 'lucide-react'
 import './ProjectDetail.css'
 
+const isVideo = (path) => path && /\.(mp4|webm|ogg|mov|avi)(\?.*)?$/i.test(path);
+
 /* ──────────────────────────────────────────────────
-   Lightbox — full-black overlay showing one image
+   CarouselVideo — Video slide player helper
+   ────────────────────────────────────────────────── */
+function CarouselVideo({ src, isActive, onClick }) {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    if (!videoRef.current) return
+    if (isActive) {
+      videoRef.current.play().catch(err => console.log('Video autoplay blocked or failed:', err))
+    } else {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+    }
+  }, [isActive])
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      className="carousel__img"
+      muted
+      loop
+      playsInline
+      onClick={onClick}
+    />
+  )
+}
+
+/* ──────────────────────────────────────────────────
+   Lightbox — full-black overlay showing one image/video
    ────────────────────────────────────────────────── */
 function Lightbox({ src, alt, onClose }) {
   useEffect(() => {
@@ -16,24 +47,37 @@ function Lightbox({ src, alt, onClose }) {
     return () => window.removeEventListener('keydown', onKey)
   }, [onClose])
 
+  const isVid = isVideo(src)
+
   return (
-    <div className="lightbox" onClick={onClose} role="dialog" aria-modal="true" aria-label="Image fullscreen">
+    <div className="lightbox" onClick={onClose} role="dialog" aria-modal="true" aria-label={isVid ? "Video fullscreen" : "Image fullscreen"}>
       <button className="lightbox__close" onClick={onClose} aria-label="Close lightbox">
         <X size={20} />
       </button>
-      <img
-        src={src}
-        alt={alt}
-        className="lightbox__img"
-        onClick={e => e.stopPropagation()}
-        draggable={false}
-      />
+      {isVid ? (
+        <video
+          src={src}
+          className="lightbox__img"
+          controls
+          autoPlay
+          loop
+          onClick={e => e.stopPropagation()}
+        />
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          className="lightbox__img"
+          onClick={e => e.stopPropagation()}
+          draggable={false}
+        />
+      )}
     </div>
   )
 }
 
 /* ──────────────────────────────────────────────────
-   Carousel — image slider with dots + arrow nav
+   Carousel — image/video slider with dots + arrow nav
    ────────────────────────────────────────────────── */
 function Carousel({ screenshots, title }) {
   const [index, setIndex] = useState(0)
@@ -74,26 +118,39 @@ function Carousel({ screenshots, title }) {
         onPointerUp={onPointerUp}
         style={{ touchAction: 'pan-y' }}
       >
-        {/* Main image */}
+        {/* Main image / video */}
         <div className="carousel__track">
-          {screenshots.map((src, i) => (
-            <div
-              key={src}
-              className={`carousel__slide ${i === index ? 'carousel__slide--active' : ''}`}
-              aria-hidden={i !== index}
-            >
-              <img
-                src={src}
-                alt={`${title} screenshot ${i + 1}`}
-                className="carousel__img"
-                draggable={false}
-                onClick={() => setLightbox(src)}
-              />
-              <div className="carousel__zoom-hint">
-                <ZoomIn size={16} />
+          {screenshots.map((src, i) => {
+            const isVid = isVideo(src)
+            const isActive = i === index
+
+            return (
+              <div
+                key={src}
+                className={`carousel__slide ${isActive ? 'carousel__slide--active' : ''}`}
+                aria-hidden={!isActive}
+              >
+                {isVid ? (
+                  <CarouselVideo
+                    src={src}
+                    isActive={isActive}
+                    onClick={() => setLightbox(src)}
+                  />
+                ) : (
+                  <img
+                    src={src}
+                    alt={`${title} screenshot ${i + 1}`}
+                    className="carousel__img"
+                    draggable={false}
+                    onClick={() => setLightbox(src)}
+                  />
+                )}
+                <div className="carousel__zoom-hint">
+                  <ZoomIn size={16} />
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         {/* Arrow buttons */}
