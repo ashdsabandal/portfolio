@@ -508,7 +508,7 @@ code, kbd, pre {
   opacity: 0.55;
 }
 
-.sigil-watermark--about {
+.sigil-watermark--tech-stack {
   width: min(380px, 40vw);
   height: min(380px, 40vw);
   left: -6%;

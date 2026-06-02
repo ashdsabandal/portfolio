@@ -5,8 +5,8 @@ import './Hero.css'
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Hero() {
-  const scrollToAbout = () =>
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToTechStack = () =>
+    document.getElementById('tech-stack')?.scrollIntoView({ behavior: 'smooth' })
 
   return (
     <section id="hero" className="hero section-wrapper">
@@ -40,11 +40,11 @@ export default function Hero() {
         </div>
 
         <div className="hero__socials reveal">
-          <a href={owner.github}   target="_blank" rel="noreferrer" aria-label="GitHub"   className="hero__social-link"><FaGithub  size={18} /></a>
-          <a href={owner.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hero__social-link"><FaLinkedin  size={18} /></a>
+          <a href={owner.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="hero__social-link"><FaGithub size={18} /></a>
+          <a href={owner.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hero__social-link"><FaLinkedin size={18} /></a>
         </div>
 
-        <button className="hero__scroll-cue reveal" onClick={scrollToAbout} aria-label="Scroll down">
+        <button className="hero__scroll-cue reveal" onClick={scrollToTechStack} aria-label="Scroll down">
           <ArrowDown size={16} />
         </button>
 

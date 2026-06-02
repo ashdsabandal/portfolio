@@ -3,7 +3,8 @@ import { Menu, X } from 'lucide-react'
 import './Navbar.css'
 
 const NAV_LINKS = [
-  { id: 'about',      label: 'Tech Stack' },
+  { id: 'hero',      label: 'About' },
+  { id: 'tech-stack',      label: 'Tech Stack' },
   { id: 'projects',   label: 'Projects' },
   { id: 'experience', label: 'Experience' },
   { id: 'contact',    label: 'Contact' },

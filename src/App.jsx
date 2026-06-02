@@ -1,25 +1,25 @@
 import { useState, useCallback, useEffect } from 'react'
 import './App.css'
 
-import Navbar         from './components/Navbar'
-import Hero           from './components/Hero'
-import About          from './components/About'
-import Projects       from './components/Projects'
-import ProjectModal   from './components/ProjectModal'
-import ProjectDetail  from './components/ProjectDetail'
-import Experience     from './components/Experience'
-import Contact        from './components/Contact'
-import Footer         from './components/Footer'
-import SigilDivider   from './components/SigilDivider'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import TechStack from './components/TechStack'
+import Projects from './components/Projects'
+import ProjectModal from './components/ProjectModal'
+import ProjectDetail from './components/ProjectDetail'
+import Experience from './components/Experience'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+import SigilDivider from './components/SigilDivider'
 import { useScrollReveal } from './hooks/useScrollReveal'
 
-const SECTIONS = ['hero', 'about', 'projects', 'experience', 'contact']
+const SECTIONS = ['hero', 'tech-stack', 'projects', 'experience', 'contact']
 
 function App() {
   const [activeProject, setActiveProject] = useState(null)
   const [activeSection, setActiveSection] = useState('hero')
 
-  const openProject  = useCallback((project) => setActiveProject(project), [])
+  const openProject = useCallback((project) => setActiveProject(project), [])
   const closeProject = useCallback(() => setActiveProject(null), [])
 
   // Scroll spy — update active nav section
@@ -56,7 +56,7 @@ function App() {
 
         <SigilDivider />
 
-        <About />
+        <TechStack />
 
         <SigilDivider flip />
 

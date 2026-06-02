@@ -9,7 +9,7 @@ import {
 } from 'react-icons/si'
 import { FaJava, FaDatabase, FaGamepad } from 'react-icons/fa6'
 import { VscVscode } from 'react-icons/vsc'
-import './About.css'
+import './TechStack.css'
 
 const iconMap = {
   'JavaScript': SiJavascript,
@@ -50,16 +50,16 @@ function SkillIcon({ name }) {
   return <span className="skill-group__dot" aria-hidden="true" />
 }
 
-export default function About() {
+export default function TechStack() {
   return (
-    <section id="about" className="section-wrapper" style={{ position: 'relative', overflow: 'hidden' }}>
-      <SigilWatermark className="sigil-watermark--about" />
-      <div className="section-container about__inner">
+    <section id="tech-stack" className="section-wrapper" style={{ position: 'relative', overflow: 'hidden' }}>
+      <SigilWatermark className="sigil-watermark--tech-stack" />
+      <div className="section-container tech-stack__inner">
 
-        <div className="about__skills" style={{ width: '100%' }}>
+        <div className="tech-stack__skills" style={{ width: '100%' }}>
           <p className="section-label reveal">Tech Stack</p>
           <h2 className="heading-chrome reveal" style={{ marginBottom: '2.5rem' }}>Technologies & Tools</h2>
-          
+
           <div className="skills-grid reveal-stagger reveal">
             {skills.map((group) => (
               <div key={group.category} className="glass-card skill-group">
