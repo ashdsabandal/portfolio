@@ -110,6 +110,17 @@ function Carousel({ screenshots, title }) {
 
   if (!screenshots.length) return null
 
+  // Only mount slides within the current window (current ± 1).
+  // Slides outside this range are removed from the DOM entirely,
+  // freeing their decoded bitmap textures from GPU memory.
+  const total = screenshots.length
+  const isInWindow = (i) => {
+    if (total <= 3) return true
+    const prev = (index - 1 + total) % total
+    const next = (index + 1) % total
+    return i === index || i === prev || i === next
+  }
+
   return (
     <>
       <div
@@ -123,6 +134,7 @@ function Carousel({ screenshots, title }) {
           {screenshots.map((src, i) => {
             const isVid = isVideo(src)
             const isActive = i === index
+            const mounted = isInWindow(i)
 
             return (
               <div
@@ -130,12 +142,14 @@ function Carousel({ screenshots, title }) {
                 className={`carousel__slide ${isActive ? 'carousel__slide--active' : ''}`}
                 aria-hidden={!isActive}
               >
-                {isVid ? (
-                  <CarouselVideo
-                    src={src}
-                    isActive={isActive}
-                    onClick={() => setLightbox(src)}
-                  />
+                {mounted && (isVid ? (
+                  isActive && (
+                    <CarouselVideo
+                      src={src}
+                      isActive={isActive}
+                      onClick={() => setLightbox(src)}
+                    />
+                  )
                 ) : (
                   <img
                     src={src}
@@ -144,10 +158,12 @@ function Carousel({ screenshots, title }) {
                     draggable={false}
                     onClick={() => setLightbox(src)}
                   />
+                ))}
+                {mounted && (
+                  <div className="carousel__zoom-hint">
+                    <ZoomIn size={16} />
+                  </div>
                 )}
-                <div className="carousel__zoom-hint">
-                  <ZoomIn size={16} />
-                </div>
               </div>
             )
           })}

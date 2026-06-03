@@ -117,6 +117,15 @@ body {
   flex-direction: column;
 }
 
+/* Pause all background animations when a modal is open (body overflow is locked).
+   This prevents the infinite sweeping gradient in the Hero section from destroying
+   framerate when scrolling inside a modal. */
+body[style*="overflow: hidden"] main *,
+body[style*="overflow: hidden"] footer *,
+body[style*="overflow: hidden"] nav * {
+  animation-play-state: paused !important;
+}
+
 /* ============================================================
    Typography
    ============================================================ */
@@ -186,8 +195,6 @@ code, kbd, pre {
 /* Glassmorphic card base */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border-metal);
   border-radius: var(--radius-lg);
   position: relative;
