@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react'
 import './App.css'
 import Sigil1Svg from './assets/sigil1.svg'
+import Sigil2Svg from './assets/sigil2.svg'
 import SigilDivider from './components/SigilDivider'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -61,6 +62,8 @@ function App() {
         <SigilDivider svg={Sigil1Svg} right="-22%" alt="Sigil Divider 2" maxWidth="480px" top="220px" />
 
         <Projects onOpenProject={openProject} />
+
+        <SigilDivider svg={Sigil2Svg} right="-16%" alt="Sigil Divider 3" maxWidth="700px" top="420px" />
 
         <Experience />
 
