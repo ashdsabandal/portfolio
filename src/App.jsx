@@ -55,15 +55,15 @@ function App() {
       <main>
         <Hero />
 
-        <SigilDivider svg={Sigil1Svg} left="-22%" alt="Sigil Divider 1" maxWidth="480px" top="50px" />
+        <SigilDivider svg={Sigil1Svg} left="-28%" alt="Sigil Divider 1" maxWidth="480px" top="50px" />
 
         <TechStack />
 
-        <SigilDivider svg={Sigil1Svg} right="-22%" alt="Sigil Divider 2" maxWidth="480px" top="220px" />
+        <SigilDivider svg={Sigil1Svg} right="-30%" alt="Sigil Divider 2" maxWidth="600px" top="220px" minWidth="250px" />
 
         <Projects onOpenProject={openProject} />
 
-        <SigilDivider svg={Sigil2Svg} right="-16%" alt="Sigil Divider 3" maxWidth="700px" top="420px" />
+        <SigilDivider svg={Sigil2Svg} right="0%" alt="Sigil Divider 3" maxWidth="700px" top="70px" minWidth="380px" transform="translateY(-20%) translateX(160px)" />
 
         <Experience />
 

@@ -4,9 +4,11 @@ const SigilDivider = ({
   svg, 
   alt = "sigil divider", 
   maxWidth = "400px", 
+  minWidth = "180px",
   top = 0,
   left,
   right,
+  position = "absolute",
   transform = "translateY(-50%)"
 }) => {
   return (
@@ -18,12 +20,12 @@ const SigilDivider = ({
     }}>
       <div className="section-container" style={{ position: 'relative', height: 0 }}>
         <div className="sigil-glow" style={{
-          position: 'absolute',
+          position,
           top,
           left,
           right,
           transform, // Defaults to centering over the section boundary vertically
-          width: 'clamp(120px, 45vw, 100%)', // Responsive width that shrinks on mobile
+          width: `clamp(${minWidth}, 60vw, 100%)`, // Responsive width that shrinks on mobile
           maxWidth, // Easily change this via the maxWidth prop
           aspectRatio: '616 / 980',
         }}>
