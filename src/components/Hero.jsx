@@ -1,11 +1,8 @@
-import { ArrowDown } from 'lucide-react'
 import { owner } from '../data/portfolioData'
 import './Hero.css'
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Hero() {
-  const scrollToTechStack = () =>
-    document.getElementById('tech-stack')?.scrollIntoView({ behavior: 'smooth' })
 
   return (
     <section id="hero" className="hero section-wrapper">
@@ -43,9 +40,6 @@ export default function Hero() {
           <a href={owner.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hero__social-link"><FaLinkedin size={18} /></a>
         </div>
 
-        <button className="hero__scroll-cue reveal" onClick={scrollToTechStack} aria-label="Scroll down">
-          <ArrowDown size={16} />
-        </button>
 
       </div>
 

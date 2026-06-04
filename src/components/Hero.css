@@ -89,28 +89,6 @@
   box-shadow: var(--purple-glow-sm);
 }
 
-/* Scroll cue */
-.hero__scroll-cue {
-  background: none;
-  border: 1px solid var(--border-metal);
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  cursor: pointer;
-  margin-top: 1.5rem;
-  animation: bounce 2.2s ease-in-out infinite;
-  transition: border-color var(--transition-fast), color var(--transition-fast);
-}
-
-.hero__scroll-cue:hover {
-  border-color: var(--purple);
-  color: var(--purple-light);
-}
-
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(6px); }
