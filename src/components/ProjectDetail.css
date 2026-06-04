@@ -250,16 +250,13 @@ video.carousel__img {
 }
 
 .pd-title {
-  font-family: var(--font-sans);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  /* override the chrome gradient from global h1 */
   background: var(--chrome-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 200% auto;
+  animation: chromeSweep 4s linear infinite;
+  font-size: clamp(2rem, 4.5vw, 4rem);
   margin: 0;
 }
 
